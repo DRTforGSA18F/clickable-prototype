@@ -1,0 +1,456 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <title>samplesite</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="styles/vendor.css">
+    <link rel="stylesheet" href="styles/fa8e7cc3.main.css">
+    <script src="scripts/vendor/32fa189c.modernizr.js"></script>
+    <style>
+    body {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .svg-container {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        padding-bottom: 70%;
+        /* aspect ratio */
+        
+        vertical-align: middle;
+        overflow: hidden;
+    }
+    
+    .svg-content-responsive {
+        display: inline-block;
+        position: absolute;
+        top: 10px;
+        left: 0;
+    }
+    
+    path.slice {
+        stroke-width: 2px;
+    }
+    
+    polyline {
+        opacity: .3;
+        stroke: black;
+        stroke-width: 2px;
+        fill: none;
+    }
+    
+    .state {
+        fill: none;
+        stroke: #a9a9a9;
+        stroke-width: 1;
+    }
+    
+    .state:hover {
+        fill-opacity: 0.5;
+    }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <header class="header navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="logo">
+                <a href="#home" class="navbar-brand">
+             sample site
+            </a>
+            </div>
+            <ul class="nav nav-pills pull-right">
+                <li class="active"><a href="#home">Home</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#details">Details</a></li>
+                <li><a href="#foodInfo">Food Pyramid</a></li>
+                <li><a href="#foodPathogens">Food Pathogens</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div id="home">
+                <h1>Title of the website</h1>
+                <div>
+                    <h2>Discription of the site</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                </div>
+                <div>
+                    <h2>Search Section</h2>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="select-food">Search Keywords:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <select id="select-food" name="state[]" multiple="multiple" class="demo-default selectized" placeholder="Select a food..." tabindex="-1">
+                                <option value="Cheese" selected="selected">Cheese</option>
+                                <option value="Milk" selected="selected">Milk</option>
+                                <option value="Meat" selected="selected">Meat</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2 col-xs-6">
+                            <button class="btn btn-block btn-primary" id="searchBtn">Search</button>
+                        </div>
+                        <div class="col-md-2 col-xs-6">
+                            <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#advSearchContainer">Advanced Search</button>
+                        </div>
+                        <div class="col-xs-12 collapse" id="advSearchContainer">
+                            <div class="top_arrow_box mtl">
+                                <form role="form" class="row">
+                                    <div class="col-md-4 col-xs-12">
+                                        <label for="ex2" class="sr-only">Filter by Date:</label> <b>2000</b>
+                                        <input id="ex2" type="text" class="span2" value="" data-slider-min="2000" data-slider-max="2015" data-slider-step="1" data-slider-value="[2004,2012]"> <b>2015</b>
+                                    </div>
+                                    <div class="col-md-3 col-xs-12">
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary active">
+                                                <input type="checkbox" checked="checked"> Nation Wide
+                                            </label>
+                                            <label class="btn btn-primary">
+                                                <input type="checkbox" id="statewideBtn"> Statewide
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-xs-12">
+                                        <div class="" id="stateSection">
+                                            <label for="select-state" class="sr-only">States:</label>
+                                            <select id="select-state" name="state[]" multiple="multiple" class="demo-default selectized" placeholder="Select a state..." tabindex="-1">
+                                                <option value="CA" selected="selected">California</option>
+                                                <option value="WY" selected="selected">Wyoming</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-xs-12">
+                                        <div class="dropdown">
+                                            <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Status
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                                <li><a href="#">Open</a></li>
+                                                <li><a href="#">Closed</a></li>
+                                                <li><a href="#">Terminated</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="results">
+                <hr>
+                <h2>Results Section</h2>
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <h3>Results</h3>
+                            </div>
+                            <div class="col-lg-4">
+                                <nav class="pull-right">
+                                    <ul class="pager">
+                                        <li><a href="#">Previous</a></li>
+                                        <li><a href="#">Next</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <div class="alert-list alert-danger-list">
+                                            <div class="icon-span">
+                                                <i class="fa fa-exclamation-circle"></i>
+                                            </div>
+                                            <div class="text-span"><a id="result1" href="javascript:void(0)" class="alert-link">Crave Brothers Les Freres cheese sold with labeling as: Les Freres, Crave Brothers Les Freres.....</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="alert-list alert-caution-list">
+                                            <div class="icon-span">
+                                                <i class="fa fa-exclamation-triangle"></i>
+                                            </div>
+                                            <div class="text-span"><a id="result2" href="javascript:void(0)" class="alert-link">Santa Rosa de Lima Queso de Huerta (Fresh Cheese), 12 oz. packaged in a rigid plastic container.....</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="alert-list alert-danger-list">
+                                            <div class="icon-span">
+                                                <i class="fa fa-exclamation-circle"></i>
+                                            </div>
+                                            <div class="text-span"><a href="javascript:void(0)" id="result3" class="alert-link">SILVER STAR; TEX-MEX QUESO; CHIPOTLE QUESO; Medium Dip; NET WT. 16 OZ; (453g); Brought To You By.....</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="alert-list alert-warning-list">
+                                            <div class="icon-span">
+                                                <i class="fa fa-exclamation"></i>
+                                            </div>
+                                            <div class="text-span"><a href="javascript:void(0)" id="result4" class="alert-link">Santa Rosa de Lima Cuajada en Terron  (Fresh Cheese Curd), 16 oz packaged in a plastic bag, Roos Foods....</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="alert-list alert-danger-list">
+                                            <div class="icon-span">
+                                                <i class="fa fa-exclamation-circle"></i>
+                                            </div>
+                                            <div class="text-span"><a href="javascript:void(0)" id="result5" class="alert-link">Whole Foods Mesclun Goat Cheese Salad Mini\n Net Wt 4 0z plastic shell</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="panel panel-info">
+                                    <div>
+                                        <!-- Nav tabs -->
+                                        <ul class="nav nav-pills" role="tablist">
+                                            <li role="presentation" class="active"><a href="#chart1" aria-controls="chart1" role="tab" data-toggle="tab">Chart 1</a></li>
+                                            <li role="presentation"><a href="#chart2" aria-controls="chart2" role="tab" data-toggle="tab">Chart 2</a></li>
+                                        </ul>
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane active" id="chart1">
+                                                <button class="randomize hide">randomize</button>
+                                                <div id="chartContainer"></div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="chart2">
+                                                <form>
+                                                    <label>
+                                                        <input type="radio" name="mode" value="grouped"> Grouped</label>
+                                                    <label>
+                                                        <input type="radio" name="mode" value="stacked" checked="checked"> Stacked</label>
+                                                </form>
+                                                <div id="chartContainer2"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        
+                           
+                            <a class="twitter-timeline" href="https://twitter.com/FDAfood" data-widget-id="613006443734806529">Tweets by @FDAfood</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                            
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="details">
+                <hr>
+                <h2>Detail</h2>
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div class="well well-sm">
+                            <dl class="dl-horizontal">
+                                <dt>Recall Number</dt>
+                                <dd>F-1834-2013</dd>
+                                <dt>Reason for recall</dt>
+                                <dd>Whole Foods Market announces that it is recalling Crave Brothers Les Freres cheese in response to a recall by the Crave Brothers Farmstead Cheese Company of Waterloo, Wisconsin. The cheese is being recalled because it has the potential to be contaminated with Listeria monocytogenes, an organism which can cause serious and sometimes fatal infections in young children, frail or elderly people, and others with weakened immune systems. Although healthy individuals may suffer only short-term symptoms such as high fever, severe headache, stiffness, nausea, abdominal pain and diarrhea, Listeria infection can cause miscarriages and stillbirths among pregnant women. To date, one illness and one death have been reported.</dd>
+                                <dt>status</dt>
+                                <dd>Ongoing</dd>
+                                <dt>Distribution pattern</dt>
+                                <dd>Retail Stores Nationwide</dd>
+                                <dt>Product quantity</dt>
+                                <dd>Unknown</dd>
+                                <dt>Recall initiation date</dt>
+                                <dd>20130704</dd>
+                                <dt>state</dt>
+                                <dd>TX</dd>
+                                <dt>country</dt>
+                                <dd>US</dd>
+                                <dt>product description</dt>
+                                <dd>Crave Brothers Les Freres cheese sold with labeling as: Les Freres, Crave Brothers Les Freres, Les Freres Wash Rind Product of USA, Crave Bros Les Freres, Crave Brothers Les Freres Cheese by Pound, Les Freres Crave Brothers, and Les Freres Crave Brothers PO-RK. Cheese was cut and wrapped.</dd>
+                                <dt>voluntary mandated</dt>
+                                <dd>Voluntary: Firm Initiated</dd>
+                                <dt>classification</dt>
+                                <dd>Class I"</dd>
+                                <dt>code_info</dt>
+                                <dd>All best by dates for the following list of PLUs: Les Freres - PLU #299682, Crave Brothers Les Freres - PLU #299682, Les Freres Wash Rind Product of USA - PLU #294473, Crave Bros Les Freres - PLU #294473, Crave Brothers Les Freres Cheese by Pound - PLU #294473, Les Freres Crave Brothers - PLU #294473, and Les Freres Crave Brothers PO-RK - PLU #294473.</dd>
+                            </dl>
+                        </div>
+                        <!-- div to hold tooltip. -->
+                        <div class="svg-container">
+                            <svg version="1.1" viewbox="0 0 1200 900" preserveaspectratio="xMinYMin meet" class="svg-content-responsive" id="statesvg"></svg>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <h3>What to do next?</h3>
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Health related action
+                                      </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                          Refund related actions
+                                        </a>
+                                     </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <h4 class="panel-title">
+                                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Manufacture
+                                      </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                    <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="foodInfo">
+                <hr>
+                <h2>Food Pyramid <small>USDA food pyramid</small></h2>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <img class="img-responsive" style="margin-left: auto; margin-right:auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/MyPyramid.svg/1024px-MyPyramid.svg.png"></div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="panel panel-grain">
+                        <div class="panel-heading">Grain</div>
+                        <div class="panel-body">Text goes here</div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="panel panel-vegetable">
+                        <div class="panel-heading">vegetable</div>
+                        <div class="panel-body">Text goes here</div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="panel panel-fruit">
+                        <div class="panel-heading">fruit</div>
+                        <div class="panel-body">Text goes here</div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="panel panel-oil">
+                        <div class="panel-heading">oil</div>
+                        <div class="panel-body">Text goes here</div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="panel panel-dairy">
+                        <div class="panel-heading">dairy</div>
+                        <div class="panel-body">Text goes here</div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="panel panel-meat">
+                        <div class="panel-heading">meat</div>
+                        <div class="panel-body">Text goes here</div>
+                    </div>
+                </div>
+            </div>
+            <div id="foodPathogens">
+                <hr>
+                <h2>Food Pathogens <small>USDA food pyramid</small></h2>
+                <div class="row">
+                    <div class="col-lg-12"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+        </div>
+    </footer>
+    <script src="scripts/b2d6f18f.vendor.js"></script>
+    <script src="scripts/b6c3df09.main.js"></script>
+    <script src="scripts/donut.js"></script>
+    <script src="scripts/stackChart.js"></script>
+    <!-- svg to hold the map. -->
+    <script src="scripts/uStates.js"></script>
+    <!-- creates uStates. -->
+    <script src="scripts/map.js"></script>
+    <script>
+    $('#select-food').selectize({
+        maxItems: 3,
+        plugins: ['remove_button'],
+        delimiter: ',',
+        persist: false,
+        create: function(input) {
+            return {
+                value: input,
+                text: input
+            }
+        }
+    });
+    $('#select-state').selectize({
+        maxItems: 3
+    });
+
+    $(function() {
+       
+        $('#results, #details').hide();
+
+        
+    });
+        $('#searchBtn').click(function() {
+            $('#results').show();
+        });
+
+
+        $('.alert-link').click(function() {
+            $('#details').show();
+        });
+
+    // With JQuery
+    //$("#ex2").slider({});
+
+    // Without JQuery
+    var slider = new Slider('#ex2', {});
+    </script>
+</body>
+
+</html>
